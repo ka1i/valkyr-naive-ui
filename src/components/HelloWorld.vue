@@ -4,6 +4,11 @@ import { ref } from 'vue'
 defineProps<{ msg: string }>()
 
 const count = ref(0)
+
+fetch('/api/getUsers')
+  .then((res) => res.json())
+  .then((data) => {console.log(data);}
+);
 </script>
 
 <template>
