@@ -18,3 +18,8 @@ npm install vite-plugin-mock -D
 npm install vue-router@4
 npm install vuex@next -S
 ```
+
++ import sass
+```
+npm install sass -D
+```
