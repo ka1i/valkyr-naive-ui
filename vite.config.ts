@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 import path from "path"
-import {viteMockServe} from 'vite-plugin-mock'
+import { viteMockServe } from 'vite-plugin-mock'
 
 export default defineConfig({
   plugins: [
@@ -16,9 +16,9 @@ export default defineConfig({
     port: 2333,
     strictPort: true
   },
-  resolve: {   
+  resolve: {
     alias: {
-      "@": path.resolve(__dirname,"src"),
+      "@": path.resolve(__dirname, "src"),
     }
   }
 })
