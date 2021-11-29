@@ -4,11 +4,17 @@ import vue from '@vitejs/plugin-vue'
 import path from "path"
 import { viteMockServe } from 'vite-plugin-mock'
 
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
+
 export default defineConfig({
   plugins: [
     vue(),
     viteMockServe({
       mockPath: 'mock',
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
     }),
   ],
   server: {
