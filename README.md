@@ -35,3 +35,9 @@ UI FrameWork:
 npm install element-plus -S
 npm install unplugin-vue-components
 ```
+
+- normalize.css
+
+```
+npm install normalize.css
+```
