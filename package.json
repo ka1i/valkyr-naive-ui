@@ -8,12 +8,10 @@
     "url": "https://github.com/ka1i/valkyr"
   },
   "scripts": {
-    "bootstrap": "yarn install",
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview --port 4180",
-    "clean": "rm -rf package-lock.json && rm -rf yarn.lock && rm -rf node_modules",
-    "reinstall": "yarn clean && yarn bootstrap"
+    "clean": "rm -rf package-lock.json && rm -rf yarn.lock && rm -rf node_modules"
   },
   "dependencies": {
     "element-plus": "^1.2.0-beta.4",

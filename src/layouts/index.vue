@@ -1,25 +1,27 @@
 <script setup lang="ts">
-import Main from "./components/Main.vue";
-import Aside from "./components/Aside.vue";
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
+import {
+    LayoutAside,
+    LayoutHeader,
+    LayoutMain,
+    LayoutFooter,
+} from "./components";
 </script>
 
 <template>
     <el-container class="app-wrapper">
         <el-aside class="sidebar-container">
-            <Aside />
+            <LayoutAside />
         </el-aside>
         <el-container class="main-container">
             <el-container>
                 <el-header>
-                    <Header />
+                    <LayoutHeader />
                 </el-header>
                 <el-main>
-                    <Main />
+                    <LayoutMain />
                 </el-main>
                 <el-footer>
-                    <Footer />
+                    <LayoutFooter />
                 </el-footer>
             </el-container>
         </el-container>
