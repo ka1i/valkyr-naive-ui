@@ -1,12 +1,27 @@
 {
   "name": "valkyr",
-  "version": "0.0.0",
+  "license": "MIT",
+  "version": "0.0.1",
+  "description": "Vue.Js Hello World!",
+  "author": {
+    "name": "ka1i",
+    "url": "https://www.mardan.wiki"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ka1i/valkyr"
+  },
+  "bugs": "https://github.com/ka1i/valkyr/issues",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",
     "serve": "vite preview --port 4173",
     "build-only": "vite build",
-    "type-check": "vue-tsc --noEmit"
+    "type-check": "vue-tsc --noEmit",
+    "clean:dist": "rm -rf dist",
+    "clean:cache": "rm -rf node_modules",
+    "clean:lock": "rm -rf package-lock.json && rm -rf yarn.lock",
+    "clean": "npm run clean:lock && npm run clean:cache && npm run clean:dist"
   },
   "dependencies": {
     "pinia": "^2.0.17",
