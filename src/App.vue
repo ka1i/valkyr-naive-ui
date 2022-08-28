@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+
+console.log("valkyr app init")
+
 </script>
 
 <template>
