@@ -1,27 +1,22 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-
 const percentageRef = ref(0)
-
 const add = () => {
   percentageRef.value += 10
   if (percentageRef.value > 100) {
     percentageRef.value = 0
   }
 }
-
 const minus = () => {
   percentageRef.value -= 10
   if (percentageRef.value < 0) {
     percentageRef.value = 100
   }
 }
-
 const percentage = percentageRef
-
 </script>
-
-<template>
+  
+  <template>
   <n-space vertical>
     <n-el>
       <n-progress type="multiple-circle" :stroke-width="6" :circle-gap="0.5" :percentage="[

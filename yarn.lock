@@ -955,9 +955,9 @@ ms@2.1.2:
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
 naive-ui@^2.32.2:
-  version "2.32.2"
-  resolved "https://registry.npmmirror.com/naive-ui/-/naive-ui-2.32.2.tgz#40f593df0b86b36f6af5635d9299417d45d6d96a"
-  integrity sha512-vTNuZ8LBlfo/cdiv4S8o6Cg5g7p9V9cR5rK+Fag2cplOnng5twTILD3sBaCqw3k/BV1331Xdk26ml8Me8QJ7iA==
+  version "2.33.1"
+  resolved "https://registry.npmmirror.com/naive-ui/-/naive-ui-2.33.1.tgz#ef1046b727145e868c4be32686fd6073219f07ac"
+  integrity sha512-S8iS5TsnJ5PAbUCCC+IGjW7H6fYJF5s0HTzuUjqRLS8C1tFxmWhKkBZU1db/vg/4O5GKEyjaoq4ZSzRHOwRTcQ==
   dependencies:
     "@css-render/plugin-bem" "^0.15.10"
     "@css-render/vue3-ssr" "^0.15.10"
@@ -1177,9 +1177,9 @@ run-parallel@^1.1.9:
     queue-microtask "^1.2.2"
 
 sass@^1.54.5:
-  version "1.54.5"
-  resolved "https://registry.npmmirror.com/sass/-/sass-1.54.5.tgz#93708f5560784f6ff2eab8542ade021a4a947b3a"
-  integrity sha512-p7DTOzxkUPa/63FU0R3KApkRHwcVZYC0PLnLm5iyZACyp15qSi32x7zVUhRdABAATmkALqgGrjCJAcWvobmhHw==
+  version "1.54.6"
+  resolved "https://registry.npmmirror.com/sass/-/sass-1.54.6.tgz#5a12c268db26555c335028e355d6b7b1a5b9b4c8"
+  integrity sha512-DUqJjR2WxXBcZjRSZX5gCVyU+9fuC2qDfFzoKX9rV4rCOcec5mPtEafTcfsyL3YJuLONjWylBne+uXVh5rrmFw==
   dependencies:
     chokidar ">=3.0.0 <4.0.0"
     immutable "^4.0.0"
@@ -1425,6 +1425,11 @@ vdirs@^0.1.4, vdirs@^0.1.8:
   integrity sha512-H9V1zGRLQZg9b+GdMk8MXDN2Lva0zx72MPahDKc30v+DtwKjfyOSXWRIX4t2mhDubM1H09gPhWeth/BJWPHGUw==
   dependencies:
     evtd "^0.2.2"
+
+vfonts@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.npmmirror.com/vfonts/-/vfonts-0.0.3.tgz#999d66fecea18efee3f2b966c81101ae8ce01a29"
+  integrity sha512-nguyw8L6Un8eelg1vQ31vIU2ESxqid7EYmy8V+MDeMaHBqaRSkg3dTBToC1PR00D89UzS/SLkfYPnx0Wf23IQQ==
 
 vite@^3.0.4:
   version "3.0.9"
