@@ -1,15 +1,22 @@
 {
   "extends": "@vue/tsconfig/tsconfig.node.json",
   "include": [
+    "package.json",
     "vite.config.*",
     "vitest.config.*",
-    "cypress.config.*"
+    "cypress.config.*",
+    "build/*.ts",
+    "build/*.d.ts",
+    "build/**/*.ts",
+    "build/**/*.d.ts",
+    "src/**/*.ts",
+    "src/**/*.d.ts",
   ],
   "compilerOptions": {
     "composite": true,
     "types": [
       "node",
       "naive-ui/volar"
-    ]
+    ],
   }
 }

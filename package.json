@@ -14,16 +14,19 @@
   "bugs": "https://github.com/ka1i/valkyr/issues",
   "scripts": {
     "dev": "vite",
+    "bootstrap": "yarn install",
     "build": "run-p type-check build-only",
-    "serve": "vite preview --port 4173",
+    "serve": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
+    "reinstall": "npm run clean && npm run bootstrap",
     "clean:dist": "rm -rf dist",
     "clean:cache": "rm -rf node_modules",
     "clean:lock": "rm -rf package-lock.json && rm -rf yarn.lock",
     "clean": "npm run clean:lock && npm run clean:cache && npm run clean:dist"
   },
   "dependencies": {
+    "moment": "^2.29.4",
     "normalize.css": "^8.0.1",
     "pinia": "^2.0.17",
     "vue": "^3.2.37",
