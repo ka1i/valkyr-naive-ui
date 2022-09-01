@@ -9,8 +9,7 @@
     "build/*.d.ts",
     "build/**/*.ts",
     "build/**/*.d.ts",
-    "src/**/*.ts",
-    "src/**/*.d.ts",
+    "src/types/*.d.ts",
   ],
   "compilerOptions": {
     "composite": true,
