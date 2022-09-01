@@ -1,3 +1,4 @@
+export { }
 declare global {
     const __APP_INFO__: {
         pkg: {
@@ -36,6 +37,12 @@ declare global {
         VITE_USE_IMAGEMIN: boolean;
         VITE_GENERATE_UI: string;
     }
-}
 
-export default global;
+    interface Window {
+        $dialog: import('naive-ui').DialogApi;
+        $loading: import('naive-ui').LoadingBarApi;
+        $message: import('naive-ui').MessageApi;
+        $loadingBar: import('naive-ui').LoadingBarApi;
+        $notification: import('naive-ui').NotificationApi;
+    }
+}

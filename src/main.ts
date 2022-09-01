@@ -1,14 +1,25 @@
 import { createApp } from 'vue'
-import { createPinia } from 'pinia'
 
-import App from './App.vue'
-import router from './router'
+import App from '/@/App.vue'
 
-import '@/assets/styles.scss'
+import { setupStore } from '/@/stores'
+import router, { setupRouter } from '/@/router'
 
-const app = createApp(App)
+import '/@/assets/styles.scss'
 
-app.use(createPinia())
-app.use(router)
+async function bootstrap() {
+    const app = createApp(App)
 
-app.mount('#app')
+    // 挂载状态管理
+    setupStore(app)
+    // 挂载路由
+    setupRouter(app)
+
+    // 路由准备就绪后挂载APP实例
+    await router.isReady();
+
+    app.mount('#app')
+}
+
+// start valkyr app
+void bootstrap()
