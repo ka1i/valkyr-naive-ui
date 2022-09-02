@@ -1,19 +1,18 @@
 <template>
-    <n-layout class="layout" position="absolute" has-sider>
+    <n-layout position="absolute" has-sider>
         <!-- 左侧区域 -->
-        <n-layout-sider position="absolute" collapse-mode="transform" :collapsed-width="0" :width="280"
-            :collapsed="collapsed" class="app-layout-sider" show-trigger="arrow-circle"
-            style="border-top-right-radius: 16px;" @collapse="collapsed = true" @expand="collapsed = false">
+        <n-layout-sider bordered position="absolute" collapse-mode="width" :collapsed-width="64" :width="220"
+            :collapsed="collapsed" show-trigger="arrow-circle" @collapse="collapsed = true" @expand="collapsed = false">
             <!-- title -->
             <span class="app-layout-sider__title">
-                How to use provider
+                {{ env.valkyr_app_title }}
             </span>
             <!-- 左侧菜单 -->
             <n-menu :value="activeName" :options="layoutOptions" :collapsed-width="64" :collapsed-icon-size="22"
                 @update:value="handleMenuSelect" />
         </n-layout-sider>
         <!-- 右侧区域-->
-        <n-layout position="absolute" style="transition: all 0.3s;" :style="{ left: collapsed ? '10px' : '280px' }">
+        <n-layout position="absolute" style="transition: all 0.3s;" :style="{ left: collapsed ? '10px' : '220px' }">
             <!-- header区域-->
             <n-layout-header bordered>
                 <div style="padding-right: 40px;">
@@ -22,8 +21,8 @@
                 </div>
             </n-layout-header>
             <!-- 页面内容区域-->
-            <n-layout-content class="layout-content" style="border-radius: 0 16px 16px;">
-                <div style="padding: 20px 40px;">
+            <n-layout-content class="layout-content">
+                <div>
                     <router-view v-slot="{ Component }">
                         <component :is="Component" :key="$route.path" />
                     </router-view>
@@ -42,10 +41,11 @@ import useConfig from '/@/hooks/useConfig'
 import { LAYOUT_ITEMS } from '/@/constant/constant'
 
 const router = useRouter()
+const env = import.meta.env
 
-const layoutOptions = ref<MenuOption[]>(LAYOUT_ITEMS)
-const collapsed = ref(false)
 const activeName = ref('/')
+const collapsed = ref(false)
+const layoutOptions = ref<MenuOption[]>(LAYOUT_ITEMS)
 const handleMenuSelect = (value: string) => {
     activeName.value = value
     router.push({
@@ -57,6 +57,7 @@ const { theme, lang, changeTheme, changeLang, } = useConfig()
 const showLang = computed(() => {
     return lang.value.name === 'zh-CN' ? '中文' : 'English'
 })
+
 
 </script>
 
@@ -74,7 +75,7 @@ const showLang = computed(() => {
 }
 
 .n-layout-header {
-    padding: 24px;
+    padding: 16px;
     display: flex;
     justify-content: flex-end;
 }

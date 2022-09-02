@@ -2,7 +2,9 @@
 import { RouterView } from 'vue-router'
 import Provider from '/@/components/provider.vue'
 
-console.log("valkyr app init")
+const { pkg } = __APP_INFO__;
+
+console.log(pkg.name + " app init")
 
 </script>
   

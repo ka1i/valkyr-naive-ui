@@ -1,26 +1,22 @@
+import type { Component } from 'vue'
+import { h } from 'vue'
+import { NIcon } from 'naive-ui'
+
+import { Home, InformationCircle } from '@vicons/ionicons5'
+
+function renderIcon(icon: Component) {
+    return () => h(NIcon, null, { default: () => h(icon) })
+}
+
 export const LAYOUT_ITEMS = [
     {
         label: 'Home',
         key: '/',
+        icon: renderIcon(Home)
     },
     {
-        label: 'Request',
-        key: '/request',
-    },
-    {
-        label: 'Message',
-        key: '/message',
-    },
-    {
-        label: 'Dialog',
-        key: '/dialog',
-    },
-    {
-        label: 'Notification',
-        key: '/notification',
-    },
-    {
-        label: 'LoadingBar',
-        key: '/loadingBar',
+        label: 'About',
+        key: '/about',
+        icon: renderIcon(InformationCircle)
     },
 ]

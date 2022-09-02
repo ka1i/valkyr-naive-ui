@@ -3,12 +3,15 @@ declare global {
     const __APP_INFO__: {
         pkg: {
             name: string;
+            author: author;
+            license: string
             version: string;
+            repository: repository;
+            description: string
             dependencies: Recordable<string>;
             devDependencies: Recordable<string>;
         };
         gitTags: string;
-        serviceVersion: string;
         lastBuildTime: string;
     };
 
@@ -17,6 +20,15 @@ declare global {
     declare type ReadonlyRecordable<T = any> = {
         readonly [key: string]: T;
     };
+
+    declare interface author {
+        name: string
+        url: string
+    }
+    declare interface repository {
+        type: string
+        url: string
+    }
 
     interface ImportMetaEnv extends ViteEnv {
         __: unknown;

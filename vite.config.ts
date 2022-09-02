@@ -16,11 +16,10 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 
-const { dependencies, devDependencies, name, version } = pkg;
+const { name, author, license, version, repository, description, dependencies, devDependencies } = pkg;
 const __APP_INFO__ = {
-  pkg: { dependencies, devDependencies, name, version },
+  pkg: { name, author, license, version, repository, description, dependencies, devDependencies },
   lastBuildTime: moment().format('YYYY-MM-DD HH:mm:ss'),
-  serviceVersion: execSync('cat .version').toString().trim(),
   gitTags: execSync('echo $(git rev-parse --short HEAD)').toString().trim(),
 };
 
