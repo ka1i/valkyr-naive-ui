@@ -6,7 +6,7 @@
                 :collapsed="collapsed" show-trigger="arrow-circle" @collapse="collapsed = true"
                 @expand="collapsed = false">
                 <!-- title -->
-                <span class="app-layout-sider__title">
+                <span class="app-layout-sider_title">
                     {{ env.valkyr_app_title }}
                 </span>
                 <!-- 左侧菜单 -->
@@ -14,9 +14,9 @@
                     @update:value="handleMenuSelect" />
             </n-layout-sider>
             <!-- 右侧区域-->
-            <n-layout position="absolute" style="transition: all 0.3s;" :style="{ left: collapsed ? '10px' : '220px' }">
+            <n-layout position="absolute" style="transition: all 0.3s;" :style="{ left: collapsed ? '64px' : '220px' }">
                 <!-- header区域-->
-                <n-layout-header bordered>
+                <n-layout-header class="n-layout-header" bordered>
                     <div style="padding-right: 40px;">
                         <span style="margin-right: 20px;" @click="changeTheme">{{ theme === null ? '浅色' : '深色' }}</span>
                         <span @click="changeLang">{{ showLang }}</span>
@@ -47,7 +47,7 @@ const router = useRouter()
 const env = import.meta.env
 
 const activeName = ref('/')
-const collapsed = ref(false)
+const collapsed = ref<boolean>(false)
 const layoutOptions = ref<MenuOption[]>(LAYOUT_ITEMS)
 const handleMenuSelect = (value: string) => {
     activeName.value = value
@@ -61,11 +61,10 @@ const showLang = computed(() => {
     return lang.value.name === 'zh-CN' ? '中文' : 'English'
 })
 
-
 </script>
 
 <style scoped>
-.app-layout-sider__title {
+.app-layout-sider_title {
     display: flex;
     align-items: center;
     margin-top: 40px;
