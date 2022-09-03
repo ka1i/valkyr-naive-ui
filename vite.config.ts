@@ -23,7 +23,6 @@ const __APP_INFO__ = {
   gitTags: execSync('echo $(git rev-parse --short HEAD)').toString().trim(),
 };
 
-
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
   const root = process.cwd();
@@ -84,6 +83,11 @@ export default defineConfig(({ command, mode }: ConfigEnv): UserConfig => {
     },
     define: {
       __APP_INFO__: JSON.stringify(__APP_INFO__),
+    },
+    css: {
+      preprocessorOptions: {
+        scss: {}
+      }
     }
   }
 })

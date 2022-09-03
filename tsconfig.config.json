@@ -5,6 +5,8 @@
     "vite.config.*",
     "vitest.config.*",
     "cypress.config.*",
+    "postcss.config.*",
+    "tailwind.config.*",
     "build/*.ts",
     "build/*.d.ts",
     "build/**/*.ts",

@@ -1,35 +1,38 @@
 <template>
-    <n-layout position="absolute" has-sider>
-        <!-- 左侧区域 -->
-        <n-layout-sider bordered position="absolute" collapse-mode="width" :collapsed-width="64" :width="220"
-            :collapsed="collapsed" show-trigger="arrow-circle" @collapse="collapsed = true" @expand="collapsed = false">
-            <!-- title -->
-            <span class="app-layout-sider__title">
-                {{ env.valkyr_app_title }}
-            </span>
-            <!-- 左侧菜单 -->
-            <n-menu :value="activeName" :options="layoutOptions" :collapsed-width="64" :collapsed-icon-size="22"
-                @update:value="handleMenuSelect" />
-        </n-layout-sider>
-        <!-- 右侧区域-->
-        <n-layout position="absolute" style="transition: all 0.3s;" :style="{ left: collapsed ? '10px' : '220px' }">
-            <!-- header区域-->
-            <n-layout-header bordered>
-                <div style="padding-right: 40px;">
-                    <span style="margin-right: 20px;" @click="changeTheme">{{ theme === null ? '浅色' : '深色' }}</span>
-                    <span @click="changeLang">{{ showLang }}</span>
-                </div>
-            </n-layout-header>
-            <!-- 页面内容区域-->
-            <n-layout-content class="layout-content">
-                <div>
-                    <router-view v-slot="{ Component }">
-                        <component :is="Component" :key="$route.path" />
-                    </router-view>
-                </div>
-            </n-layout-content>
+    <div position="relative">
+        <n-layout position="absolute" has-sider>
+            <!-- 左侧区域 -->
+            <n-layout-sider bordered position="absolute" collapse-mode="width" :collapsed-width="64" :width="220"
+                :collapsed="collapsed" show-trigger="arrow-circle" @collapse="collapsed = true"
+                @expand="collapsed = false">
+                <!-- title -->
+                <span class="app-layout-sider__title">
+                    {{ env.valkyr_app_title }}
+                </span>
+                <!-- 左侧菜单 -->
+                <n-menu :value="activeName" :options="layoutOptions" :collapsed-width="64" :collapsed-icon-size="22"
+                    @update:value="handleMenuSelect" />
+            </n-layout-sider>
+            <!-- 右侧区域-->
+            <n-layout position="absolute" style="transition: all 0.3s;" :style="{ left: collapsed ? '10px' : '220px' }">
+                <!-- header区域-->
+                <n-layout-header bordered>
+                    <div style="padding-right: 40px;">
+                        <span style="margin-right: 20px;" @click="changeTheme">{{ theme === null ? '浅色' : '深色' }}</span>
+                        <span @click="changeLang">{{ showLang }}</span>
+                    </div>
+                </n-layout-header>
+                <!-- 页面内容区域-->
+                <n-layout-content class="layout-content">
+                    <div>
+                        <router-view v-slot="{ Component }">
+                            <component :is="Component" :key="$route.path" />
+                        </router-view>
+                    </div>
+                </n-layout-content>
+            </n-layout>
         </n-layout>
-    </n-layout>
+    </div>
 </template>
 
 <script setup lang="ts">
